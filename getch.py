@@ -20,5 +20,4 @@ class _getChUnix:
             charvar = sys.stdin.read(1)
         finally:
             termios.tcsetattr(fedvar, termios.TCSADRAIN, old_settings)
-    
         return charvar

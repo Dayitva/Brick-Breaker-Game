@@ -20,3 +20,10 @@ SCORE = 0
 #Time details
 TOTAL_TIME = 150
 START_TIME = time.time()
+
+#Level details
+BRICK_DOWN = 0
+CHANGE_LEVEL = False
+BOSS_LEVEL = False
+SPAWN1 = True
+SPAWN2 = True

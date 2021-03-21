@@ -1,23 +1,18 @@
 import os
-from game import place_items_on_board, take_input, ball_dynamics, powerup_dynamics, GameBoard
-from displays import bottom_display, win_display
+import config
+from game import *
 
 os.system('clear')
 print("\033[0;0H")
-place_items_on_board()
 print("\033[?25l")
 
-while True:
-    print("\033[0;0H")
-    take_input()
-    ball_dynamics()
-    powerup_dynamics()
+for level in range(1, 4):
+    if level == 3:
+        config.BOSS_LEVEL = True
+    my_game = Game(level)
+    my_game.play()
+
+# my_game = Game(3)
+# my_game.play()
     
-    if GameBoard.check_game_over() == True:
-        print("\033[0;0H")
-        print("\033[?25h")
-        win_display()
-        quit()
-        
-    GameBoard.print_board()
-    bottom_display()
+print("\033[?25h")
